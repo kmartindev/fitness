@@ -1,0 +1,78 @@
+.advantages {
+  background-color: $color-ghost-white;
+}
+
+.advantage__header b {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 71px;
+  line-height: 106px;
+  color: transparent;
+
+  background: linear-gradient(127.61deg, $color-crimson 0%, $color-cobalt 45.58%);
+  background-clip: text;
+
+  @include vp-1199 {
+    font-size: 58px;
+    line-height: 87px;
+  }
+
+  span {
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: $color-persian-blue;
+  }
+}
+
+.advantage__body h3 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+  color: $color-sapphire;
+
+  @include vp-1199 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.advantage__body p {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-sapphire;
+}
+
+.advantages__main {
+  background-color: $color-resolution-blue;
+}
+
+.advantages__main h3 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 74px;
+  line-height: 111px;
+  color: $color-default-white;
+
+  span {
+    font-size: 26px;
+    line-height: 39px;
+
+    @include vp-1199 {
+      font-size: 22px;
+      line-height: 33px;
+    }
+  }
+}
+
+.advantages__main p {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-default-white;
+}

@@ -1,0 +1,36 @@
+.about-view__photo {
+  width: 660px;
+  height: 401px;
+
+  @include vp-1199 {
+    width: 678px;
+    height: 345px;
+  }
+
+  @include vp-767 {
+    width: 320px;
+    height: 313px;
+  }
+}
+
+.about-view__video {
+  width: 364px;
+  height: 228px;
+
+  @include vp-1199 {
+    width: 266px;
+    height: 167px;
+  }
+
+  @include vp-767 {
+    width: 320px;
+  }
+}
+
+.about-view__video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  border: none;
+}

@@ -1,0 +1,70 @@
+.event--primary {
+  background-color: $color-torch-red;
+}
+
+.event--primary h3 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: $color-default-white;
+}
+
+.event--primary p {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 44px;
+  color: $color-default-white;
+
+  span {
+    font-size: 70px;
+    line-height: 109px;
+  }
+}
+
+.event--primary a {
+  display: inline-flex;
+  padding-bottom: 2px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: $color-default-white;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid $color-default-white;
+}
+
+.event--secondary h3 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 150px;
+  color: $color-resolution-blue;
+}
+
+.event--secondary p {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-resolution-blue;
+}
+
+.event--secondary a {
+  display: inline-flex;
+  padding-bottom: 1px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+  color: $color-resolution-blue;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid $color-resolution-blue;
+}

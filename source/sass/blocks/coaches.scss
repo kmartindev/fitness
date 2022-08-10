@@ -1,0 +1,64 @@
+.coaches__slider ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.coach__photo img {
+  width: 260px;
+  height: 294px;
+
+  @include vp-1199 {
+    width: 268px;
+    height: 294px;
+  }
+
+  @include vp-767 {
+    width: 226px;
+    height: 274px;
+  }
+}
+
+.coach__title p {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  color: $color-default-white;
+}
+
+.coach__description {
+  background-color: $color-sapphire-89;
+}
+
+.coach__description h3 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  color: $color-default-white;
+}
+
+.coach__description p {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-spindle;
+}
+
+.coach__description ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.coach__description li {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-default-white;
+}

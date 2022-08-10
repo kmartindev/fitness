@@ -1,0 +1,16 @@
+.trial-form__field input {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 8px 0;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-default-white;
+
+  background: none;
+  border: none;
+  border-bottom: 1px solid $color-light-slate-grey;
+}

@@ -1,30 +1,179 @@
 .btn {
   display: inline-flex;
-  margin: 10px 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 57px;
   padding: 10px 20px;
 
-  color: $color-default-white;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+  color: $color-default-grey;
+  text-transform: uppercase;
+  text-align: center;
 
-  background-color: $color-neon-blue;
-  border: none;
+  background: none;
+  border: 4px solid $color-default-grey;
   cursor: pointer;
 
-  transition: opacity $trans-default;
+  user-select: none;
 
-  &--red {
-    background-color: $color-torch-red;
-  }
+  transition: $trans-default;
 
-  &:disabled {
-    opacity: 0.5;
-
-    pointer-events: none;
+  @include vp-767 {
+    min-height: 59px;
   }
 
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {
-      opacity: 0.8;
+      color: $color-default-grey-70;
+
+      border-color: $color-default-grey-70;
+    }
+
+    &:active {
+      color: $color-default-grey-30;
+
+      border-color: $color-default-grey-30;
     }
   }
+}
+
+.btn--main-screen {
+  width: 230px;
+
+  @include vp-1199 {
+    width: 183px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.btn--light {
+  color: $color-default-white;
+
+  border-color: $color-default-white;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      color: $color-sapphire;
+
+      background-color: $color-default-white;
+      border-color: $color-default-white;
+    }
+
+    &:active {
+      color: $color-sapphire-30;
+
+      border-color: $color-default-white;
+    }
+  }
+}
+
+.btn--dark {
+  color: $color-sapphire;
+
+  border-color: $color-sapphire;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      color: $color-default-white;
+
+      background-color: $color-sapphire;
+      border-color: $color-sapphire;
+    }
+
+    &:active {
+      color: $color-default-white-30;
+    }
+  }
+}
+
+.btn--color {
+  position: relative;
+
+  color: $color-default-white;
+
+  background: none;
+  border: none;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-cobalt;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(97.05deg, $color-torch-red 17.6%, $color-cobalt 95.31%);
+
+    transition: $trans-default;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      color: $color-default-white;
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    &:active {
+      color: $color-default-white-30;
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.btn--membership {
+  width: 206px;
+  min-height: 64px;
+
+  border-width: 2px;
+}
+
+.btn--promo {
+  width: 100%;
+  min-height: 67px;
+
+  @include vp-1199 {
+    min-height: 39px;
+  }
+}
+
+.btn--trial {
+  width: 100%;
+  min-height: 52px;
+
+  border-width: 3px;
 }

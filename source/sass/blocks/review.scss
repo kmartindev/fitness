@@ -1,0 +1,40 @@
+.review {
+  background-color: $color-resolution-blue;
+}
+
+.review__photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  @include vp-767 {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+.review__description {
+  margin: 0;
+  padding: 0;
+}
+
+.review__description cite {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: $color-default-white;
+
+  @include vp-767 {
+    line-height: 26px;
+  }
+}
+
+.review__description p {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-default-white;
+}
