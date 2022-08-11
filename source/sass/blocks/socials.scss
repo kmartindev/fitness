@@ -1,6 +1,11 @@
 .socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
+
+  text-align: center;
 
   list-style: none;
 
@@ -9,11 +14,39 @@
   }
 }
 
+.socials__item {
+  margin-bottom: 9px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .socials__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 24px;
+  height: 24px;
+
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   color: $color-default-white;
   text-transform: uppercase;
+
+  transition: $trans-default;
+
+  &:hover,
+  &:focus {
+    color: $color-sapphire;
+
+    background-color: $color-default-white;
+  }
+
+  &:active {
+    color: $color-sapphire-30;
+  }
 }

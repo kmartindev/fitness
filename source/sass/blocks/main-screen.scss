@@ -1,29 +1,90 @@
+.main-screen {
+  position: relative;
+}
+
+.main-screen__content {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+
+  @include vp-1199 {
+    grid-template-columns: 354px 1fr;
+  }
+
+  @include vp-767 {
+    grid-template-columns: auto;
+  }
+}
+
+.main-screen__description {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 115px;
+  padding-right: 65px;
+
+  @include vp-1199 {
+    padding-top: 74px;
+    padding-right: 30px;
+  }
+
+  @include vp-767 {
+    padding-right: 0;
+  }
+}
+
 .main-screen__description h1 {
+  margin: 0;
+  margin-bottom: 65px;
+
   font-family: "Bebas Neue", "Trebuchet MS", sans-serif;
   font-weight: 700;
   font-size: 109px;
   line-height: 109px;
   letter-spacing: 0.03em;
   color: $color-default-white;
+  text-align: right;
 
   -webkit-text-stroke: 3px $color-default-white;
 
   @include vp-1199 {
+    margin-bottom: 47px;
+
     font-size: 86px;
     line-height: 86px;
   }
 
   @include vp-767 {
+    max-width: 290px;
+    margin-bottom: 48px;
+
     font-size: 78px;
     line-height: 78px;
   }
 }
 
 .main-screen__description ul {
+  position: absolute;
+  top: 304px;
+  right: 328px;
+
   margin: 0;
   padding: 0;
 
   list-style: none;
+
+  text-align: right;
+
+  @include vp-1199 {
+    top: 207px;
+    right: 241px;
+  }
+
+  @include vp-767 {
+    top: 195px;
+    right: 177px;
+  }
 }
 
 .main-screen__description li {
@@ -35,6 +96,11 @@
 }
 
 .main-screen__description p {
+  order: -1;
+
+  margin: 0;
+  margin-bottom: 5px;
+
   font-family: "Bebas Neue", "Trebuchet MS", sans-serif;
   font-weight: 400;
   font-size: 49px;
@@ -43,26 +109,75 @@
   color: $color-default-white;
 
   @include vp-1199 {
+    margin-bottom: 0;
+
     font-size: 34px;
     line-height: 34px;
   }
 
   @include vp-767 {
+    margin-bottom: 6px;
+
     font-size: 28px;
     line-height: 28px;
   }
 }
 
-.main-screen__photo {
-  width: 500px;
-  height: 556px;
+.main-screen__view {
+  display: flex;
+  align-items: flex-end;
+  min-height: 556px;
+  padding-right: 65px;
 
   @include vp-1199 {
+    justify-content: center;
+    align-items: flex-start;
+    min-height: auto;
+    padding-top: 21px;
+    padding-right: 0;
+  }
+}
+
+.main-screen__photo {
+  width: auto;
+  max-height: 556px;
+
+  aspect-ratio: 125/139;
+
+  @include vp-1199 {
+    position: relative;
+
     width: 324px;
     height: 390px;
+    max-height: none;
+
+    overflow: hidden;
+
+    aspect-ratio: auto;
   }
 
   @include vp-767 {
     display: none;
   }
+}
+
+.main-screen__photo img {
+  width: 100%;
+  height: auto;
+
+  @include vp-1199 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50%), calc(-50% + 4px)) scale(1.11);
+
+    width: 500px;
+    height: auto;
+  }
+}
+
+.main-screen__other {
+  position: absolute;
+  right: -6px;
+  bottom: 38px;
 }
