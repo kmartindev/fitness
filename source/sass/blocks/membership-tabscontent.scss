@@ -1,15 +1,61 @@
+.membership-tabscontent {
+  width: 100%;
+}
+
 .membership-tabscontent__item ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 3.45%;
+  row-gap: 40px;
   margin: 0;
   padding: 0;
 
   list-style: none;
+
+  @include vp-1199 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include vp-767 {
+    row-gap: 35px;
+  }
 }
 
 .membership-tabscontent__item li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 448px;
+  padding: 49px 19.17% 62px;
+
+  text-align: center;
+
   background-color: $color-default-white;
+  border: 7px double transparent;
+
+  &:hover,
+  &:focus-within {
+    border-image: linear-gradient(135deg, $color-crimson 0%, $color-smalt 100%) 7 stretch;
+  }
+
+  @include vp-1199 {
+    width: 100%;
+    max-width: 442px;
+    padding: 50px 77px 62px;
+  }
+
+  @include vp-767 {
+    min-height: 384px;
+    padding: 44px 42px 48px;
+  }
 }
 
 .membership-tabscontent__item h3 {
+  margin: 0;
+  margin-bottom: 5px;
+
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 26px;
@@ -17,21 +63,33 @@
   color: $color-sapphire;
 
   @include vp-767 {
+    margin-bottom: 8px;
+
     font-size: 22px;
     line-height: 24px;
   }
 }
 
 .membership-tabscontent__item p {
+  margin: 0;
+  margin-bottom: 66px;
+
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: $color-chambray;
+
+  @include vp-767 {
+    margin-bottom: 55px;
+  }
 }
 
 .membership-tabscontent__item b {
+  position: relative;
+
   display: block;
+  margin-bottom: 34px;
 
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
@@ -39,8 +97,114 @@
   line-height: 90px;
   color: $color-egyptian-blue;
 
+  &::before {
+    content: attr(data-content) "";
+
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 150px;
+    color: $color-whisper;
+
+    text-align: center;
+
+    opacity: 0.48;
+
+    @include vp-767 {
+      top: -44px;
+
+      font-size: 80px;
+      line-height: 120px;
+    }
+  }
+
   @include vp-767 {
+    margin-bottom: 31px;
+
     font-size: 48px;
     line-height: 72px;
+  }
+
+  span,
+  svg {
+    position: relative;
+  }
+
+  svg {
+    fill: $color-sapphire;
+
+    @include vp-767 {
+      width: 24px;
+      height: 33px;
+    }
+  }
+}
+
+.membership-tabscontent__item a {
+  margin-top: auto;
+}
+
+.membership-tabscontent__item li:hover a,
+.membership-tabscontent__item li:focus-within a {
+  position: relative;
+
+  color: $color-default-white;
+
+  background: none;
+  border: none;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-cobalt;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(97.05deg, $color-torch-red 17.6%, $color-cobalt 95.31%);
+
+    transition: $trans-default;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      color: $color-default-white;
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    &:active {
+      color: $color-default-white-30;
+    }
+  }
+
+  span {
+    position: relative;
+    z-index: 3;
   }
 }

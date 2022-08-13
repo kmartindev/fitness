@@ -69,7 +69,7 @@
             <div class="about__content">
               <div class="about__description  about-description">
                 <div class="about-description__header">
-                  <h2 class="section__title">Тренажерный зал</h2>
+                  <h2 class="section__title  section__title--about">Тренажерный зал</h2>
                   <p>Просторный зал площадью 900&nbsp;кв/м</p>
                 </div>
                 <div class="about-description__body">
@@ -95,7 +95,7 @@
         <section class="membership  section">
           <div class="container">
             <div class="membership__content">
-              <h2 class="section__title">Абонементы</h2>
+              <h2 class="section__title  section__title--membership">Абонементы</h2>
               <div class="membership__tabs  membership-tabs">
                 <button class="membership-tabs__item  is-active" type="button">1 месяц</button>
                 <button class="membership-tabs__item" type="button">6 месяцев</button>
@@ -107,26 +107,39 @@
                     <li>
                       <h3>С тренером</h3>
                       <p>12 занятий</p>
-                      <b>5000</b>
-                      <a class="btn  btn--dark  btn--membership" href="#">Купить абонемент</a>
+                      <b data-content="5000"><span>5000</span>
+                        <svg width="30" height="42" aria-hidden="true" focusable="false">
+                          <use xlink:href="img/sprite_auto.svg#icon-ruble"></use>
+                        </svg>
+                      </b>
+                      <a class="btn  btn--dark  btn--membership" href="#"><span>Купить абонемент</span></a>
                     </li>
                     <li>
                       <h3>Дневной</h3>
                       <p>с 8:00 до 17:00</p>
-                      <b>1700</b>
-                      <a class="btn  btn--color  btn--membership" href="#"><span>Купить абонемент</span></a>
+                      <b data-content="1700"><span>1700</span>
+                        <svg width="30" height="42" aria-hidden="true" focusable="false">
+                          <use xlink:href="img/sprite_auto.svg#icon-ruble"></use>
+                        </svg>
+                      </b>
+                      <a class="btn  btn--dark  btn--membership" href="#"><span>Купить абонемент</span></a>
                     </li>
                     <li>
                       <h3>Полный день</h3>
                       <p>с 8:00 до 22:00</p>
-                      <b>2700</b>
-                      <a class="btn  btn--dark  btn--membership" href="#">Купить абонемент</a>
+                      <b data-content="2700"><span>2700</span>
+                        <svg width="30" height="42" aria-hidden="true" focusable="false">
+                          <use xlink:href="img/sprite_auto.svg#icon-ruble"></use>
+                        </svg>
+                      </b>
+                      <a class="btn  btn--dark  btn--membership" href="#"><span>Купить абонемент</span></a>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+          <div class="membership__weights"></div>
         </section>
         <section class="promo">
           <div class="container">

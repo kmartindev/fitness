@@ -1,3 +1,65 @@
 .membership {
+  position: relative;
+
+  padding-top: 115px;
+  padding-bottom: 120px;
+
   background-color: $color-ghost-white;
+
+  @include vp-1199 {
+    padding-top: 96px;
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 66px;
+    padding-bottom: 71px;
+  }
+}
+
+.membership__content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.membership__weights {
+  position: absolute;
+  bottom: -68px;
+  right: -138px;
+
+  width: 380px;
+  height: 331px;
+
+  background-image: url("../img/membership.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @supports (background-image: image-set(url("../img/membership.webp") 1x)) {
+    background-image: image-set(url("../img/membership.webp") 1x);
+  }
+
+  @include retina {
+    background-image: url("../img/membership@2x.jpg");
+
+    @supports (background-image: image-set(url("../img/membership@2x.webp") 2x)) {
+      background-image: image-set(url("../img/membership@2x.webp") 2x);
+    }
+  }
+
+  @include vp-1199 {
+    bottom: -51px;
+    right: -35px;
+
+    width: 343px;
+    height: 298px;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
 }

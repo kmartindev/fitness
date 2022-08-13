@@ -454,6 +454,7 @@ body {
   min-width: 320px;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   background-color: #ffffff;
 }
 
@@ -695,46 +696,8 @@ button,
   border-color: #102654;
 }
 
-.btn--color {
-  position: relative;
-  color: #ffffff;
-  background: none;
-  border: none;
-}
-
-.btn--color::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background-color: #0041ca;
-}
-
-.btn--color::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background: -o-linear-gradient(352.95deg, #ed0233 17.6%, #0041ca 95.31%);
-  background: linear-gradient(97.05deg, #ed0233 17.6%, #0041ca 95.31%);
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-.btn--color span {
-  position: relative;
-  z-index: 3;
-}
-
 .btn--membership {
-  width: 206px;
+  width: 100%;
   min-height: 64px;
   border-width: 2px;
 }
@@ -1071,13 +1034,28 @@ button,
   color: rgba(16, 38, 84, 0.3);
 }
 
+.page-content {
+  overflow-x: hidden;
+}
+
 .section__title {
+  margin: 0;
   font-family: "Bebas Neue", "Trebuchet MS", sans-serif;
   font-weight: 700;
   font-size: 49px;
   line-height: 49px;
   letter-spacing: 0.03em;
   color: #102654;
+}
+
+.section__title--about {
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.section__title--membership {
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .section__title--trial {
@@ -1101,11 +1079,6 @@ button,
   padding-top: 43px;
   padding-right: 80px;
   padding-left: 60px;
-}
-
-.about-description__header h2 {
-  margin: 0;
-  margin-bottom: 12px;
 }
 
 .about-description__header p {
@@ -1167,12 +1140,71 @@ button,
 }
 
 .membership {
+  position: relative;
+  padding-top: 115px;
+  padding-bottom: 120px;
   background-color: #f8f9fc;
 }
 
+.membership__content {
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.membership__weights {
+  position: absolute;
+  bottom: -68px;
+  right: -138px;
+  width: 380px;
+  height: 331px;
+  background-image: url("../img/membership.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+@supports ((background-image: -webkit-image-set(url("../img/membership.webp") 1x)) or (background-image: image-set(url("../img/membership.webp") 1x))) {
+  .membership__weights {
+    background-image: -webkit-image-set(url("../img/membership.webp") 1x);
+    background-image: image-set(url("../img/membership.webp") 1x);
+  }
+}
+
+.membership-tabs {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 39px;
+}
+
+.membership-tabs::before {
+  content: "";
+  position: absolute;
+  right: 23px;
+  bottom: 0;
+  left: 23px;
+  border-bottom: 2px solid rgba(120, 120, 120, 0.2);
+}
+
 .membership-tabs__item {
-  margin: 0;
-  padding: 0;
+  margin: 0 23px;
+  padding: 12px 0;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -1180,24 +1212,74 @@ button,
   color: rgba(16, 38, 84, 0.5);
   background: none;
   border: none;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.membership-tabs__item:hover,
+.membership-tabs__item:focus {
+  color: #102654;
+  border-color: #d10a42;
+}
+
+.membership-tabs__item:active {
+  color: rgba(16, 38, 84, 0.5);
 }
 
 .membership-tabs__item.is-active {
   color: #102654;
+  border-color: #d10a42;
+}
+
+.membership-tabscontent {
+  width: 100%;
 }
 
 .membership-tabscontent__item ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 3.45%;
+  -moz-column-gap: 3.45%;
+  column-gap: 3.45%;
+  row-gap: 40px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .membership-tabscontent__item li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 448px;
+  padding: 49px 19.17% 62px;
+  text-align: center;
   background-color: #ffffff;
+  border: 7px double transparent;
+}
+
+.membership-tabscontent__item li:hover,
+.membership-tabscontent__item li:focus-within {
+  -o-border-image: -o-linear-gradient(315deg, #d10a42 0%, #00359f 100%) 7 stretch;
+  border-image: linear-gradient(135deg, #d10a42 0%, #00359f 100%) 7 stretch;
 }
 
 .membership-tabscontent__item h3 {
+  margin: 0;
+  margin-bottom: 5px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 26px;
@@ -1206,6 +1288,8 @@ button,
 }
 
 .membership-tabscontent__item p {
+  margin: 0;
+  margin-bottom: 66px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1214,12 +1298,86 @@ button,
 }
 
 .membership-tabscontent__item b {
+  position: relative;
   display: block;
+  margin-bottom: 34px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 60px;
   line-height: 90px;
   color: #103aae;
+}
+
+.membership-tabscontent__item b::before {
+  content: attr(data-content) "";
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 150px;
+  color: #e8e8e8;
+  text-align: center;
+  opacity: 0.48;
+}
+
+.membership-tabscontent__item b span,
+.membership-tabscontent__item b svg {
+  position: relative;
+}
+
+.membership-tabscontent__item b svg {
+  fill: #102654;
+}
+
+.membership-tabscontent__item a {
+  margin-top: auto;
+}
+
+.membership-tabscontent__item li:hover a,
+.membership-tabscontent__item li:focus-within a {
+  position: relative;
+  color: #ffffff;
+  background: none;
+  border: none;
+}
+
+.membership-tabscontent__item li:hover a::before,
+.membership-tabscontent__item li:focus-within a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #0041ca;
+}
+
+.membership-tabscontent__item li:hover a::after,
+.membership-tabscontent__item li:focus-within a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: -o-linear-gradient(352.95deg, #ed0233 17.6%, #0041ca 95.31%);
+  background: linear-gradient(97.05deg, #ed0233 17.6%, #0041ca 95.31%);
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.membership-tabscontent__item li:hover a span,
+.membership-tabscontent__item li:focus-within a span {
+  position: relative;
+  z-index: 3;
 }
 
 .promo__description {
@@ -1614,17 +1772,22 @@ button,
     color: rgba(255, 255, 255, 0.3);
   }
 
-  .btn--color:hover,
-  .btn--color:focus {
+  .membership-tabscontent__item li:hover a:hover,
+  .membership-tabscontent__item li:hover a:focus,
+  .membership-tabscontent__item li:focus-within a:hover,
+  .membership-tabscontent__item li:focus-within a:focus {
     color: #ffffff;
   }
 
-  .btn--color:hover::after,
-  .btn--color:focus::after {
+  .membership-tabscontent__item li:hover a:hover::after,
+  .membership-tabscontent__item li:hover a:focus::after,
+  .membership-tabscontent__item li:focus-within a:hover::after,
+  .membership-tabscontent__item li:focus-within a:focus::after {
     opacity: 0;
   }
 
-  .btn--color:active {
+  .membership-tabscontent__item li:hover a:active,
+  .membership-tabscontent__item li:focus-within a:active {
     color: rgba(255, 255, 255, 0.3);
   }
 }
@@ -1636,6 +1799,10 @@ button,
 
   .btn--main-screen {
     width: 187px;
+  }
+
+  .btn--membership {
+    width: 206px;
   }
 
   .btn--promo {
@@ -1730,6 +1897,10 @@ button,
     line-height: 42px;
   }
 
+  .section__title--membership {
+    margin-bottom: 20px;
+  }
+
   .section__title--trial {
     font-size: 42px;
     line-height: 42px;
@@ -1737,7 +1908,7 @@ button,
 
   .about {
     padding-top: 96px;
-    padding-bottom: 148px;
+    padding-bottom: 183px;
   }
 
   .about__content {
@@ -1781,9 +1952,45 @@ button,
     height: 167px;
   }
 
+  .membership {
+    padding-top: 96px;
+    padding-bottom: 100px;
+  }
+
+  .membership__weights {
+    bottom: -51px;
+    right: -35px;
+    width: 343px;
+    height: 298px;
+  }
+
+  .membership-tabs {
+    margin-bottom: 43px;
+  }
+
   .membership-tabs__item {
+    margin: 0 27px;
     font-size: 18px;
     line-height: 27px;
+  }
+
+  .membership-tabscontent__item ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .membership-tabscontent__item li {
+    width: 100%;
+    max-width: 442px;
+    padding: 50px 77px 62px;
   }
 
   .promo__description h3 {
@@ -1869,6 +2076,10 @@ button,
     transform: scaleX(1.01);
   }
 
+  .btn--membership {
+    min-height: 64px;
+  }
+
   .modal__wrapper {
     padding: 60px 16px;
   }
@@ -1937,6 +2148,14 @@ button,
     line-height: 32px;
   }
 
+  .section__title--about {
+    margin-bottom: 9px;
+  }
+
+  .section__title--membership {
+    margin-bottom: 12px;
+  }
+
   .section__title--trial {
     font-size: 32px;
     line-height: 32px;
@@ -1944,7 +2163,7 @@ button,
 
   .about {
     padding-top: 66px;
-    padding-bottom: 44px;
+    padding-bottom: 70px;
   }
 
   .about-description {
@@ -1952,10 +2171,6 @@ button,
     padding-right: 15px;
     padding-left: 15px;
     text-align: left;
-  }
-
-  .about-description__header h2 {
-    margin-bottom: 9px;
   }
 
   .about-description__header p {
@@ -1986,19 +2201,68 @@ button,
     margin: 0 auto;
   }
 
+  .membership {
+    padding-top: 66px;
+    padding-bottom: 71px;
+  }
+
+  .membership__weights {
+    display: none;
+  }
+
+  .membership-tabs::before {
+    right: 0;
+    left: 0;
+  }
+
+  .membership-tabs {
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+
   .membership-tabs__item {
+    margin: 0;
     font-size: 16px;
     line-height: 24px;
   }
 
+  .membership-tabscontent__item ul {
+    row-gap: 35px;
+  }
+
+  .membership-tabscontent__item li {
+    min-height: 384px;
+    padding: 44px 42px 48px;
+  }
+
   .membership-tabscontent__item h3 {
+    margin-bottom: 8px;
     font-size: 22px;
     line-height: 24px;
   }
 
+  .membership-tabscontent__item p {
+    margin-bottom: 55px;
+  }
+
+  .membership-tabscontent__item b::before {
+    top: -44px;
+    font-size: 80px;
+    line-height: 120px;
+  }
+
   .membership-tabscontent__item b {
+    margin-bottom: 31px;
     font-size: 48px;
     line-height: 72px;
+  }
+
+  .membership-tabscontent__item b svg {
+    width: 24px;
+    height: 33px;
   }
 
   .promo__photo {
@@ -2023,4 +2287,17 @@ button,
     font-size: 16px;
     line-height: 19px;
   }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .membership__weights {
+    background-image: url("../img/membership@2x.jpg");
+  }
+
+@supports ((background-image: -webkit-image-set(url("../img/membership@2x.webp") 2x)) or (background-image: image-set(url("../img/membership@2x.webp") 2x))) {
+    .membership__weights {
+      background-image: -webkit-image-set(url("../img/membership@2x.webp") 2x);
+      background-image: image-set(url("../img/membership@2x.webp") 2x);
+    }
+}
 }

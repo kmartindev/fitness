@@ -21,15 +21,6 @@
   }
 }
 
-.about-description__header h2 {
-  margin: 0;
-  margin-bottom: 12px;
-
-  @include vp-767 {
-    margin-bottom: 9px;
-  }
-}
-
 .about-description__header p {
   margin: 0;
   margin-bottom: 38px;
