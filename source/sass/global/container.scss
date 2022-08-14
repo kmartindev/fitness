@@ -13,7 +13,8 @@
   }
 }
 
-.container--about {
+.container--about,
+.container--advantages {
   @include vp-767 {
     padding: 0;
   }
