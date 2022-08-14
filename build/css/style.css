@@ -704,7 +704,7 @@ button,
 
 .btn--promo {
   width: 100%;
-  min-height: 67px;
+  min-height: 71px;
 }
 
 .btn--trial {
@@ -1380,11 +1380,36 @@ button,
   z-index: 3;
 }
 
+.promo {
+  padding-top: 119px;
+  padding-bottom: 60px;
+}
+
+.promo__content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(450px, 500px) 56.9%;
+  grid-template-columns: minmax(450px, 500px) 56.9%;
+}
+
 .promo__description {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 500px;
+  padding: 77px 15.6% 85px;
   background-color: #ed0233;
 }
 
 .promo__description h3 {
+  width: 205px;
+  margin: 0;
+  margin-bottom: 15px;
   font-family: "Bebas Neue", "Trebuchet MS", sans-serif;
   font-weight: 700;
   font-size: 90px;
@@ -1394,6 +1419,8 @@ button,
 }
 
 .promo__description p {
+  margin: 0;
+  margin-bottom: 45px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -1402,11 +1429,55 @@ button,
 }
 
 .promo__description table {
+  position: absolute;
+  top: 81px;
+  right: 15.6%;
   border-collapse: collapse;
 }
 
+.promo__description tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.promo__description tr:last-child {
+  margin-bottom: 0;
+}
+
 .promo__description td {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0;
+}
+
+.promo__description td:nth-child(n + 2) {
+  margin-top: -1px;
+}
+
+.promo__description td:nth-child(n + 2)::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+}
+
+.promo__description td span {
+  margin-left: 6px;
 }
 
 .promo__description tr td:first-child {
@@ -1431,9 +1502,20 @@ button,
   line-height: 21px;
 }
 
+.promo__description a {
+  margin-top: auto;
+}
+
 .promo__photo {
-  width: 660px;
-  height: 500px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.promo__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .coaches__slider ul {
@@ -1806,7 +1888,10 @@ button,
   }
 
   .btn--promo {
-    min-height: 39px;
+    min-height: 40px;
+    font-size: 10px;
+    line-height: 12px;
+    border-width: 2px;
   }
 
   .page-header {
@@ -1993,14 +2078,47 @@ button,
     padding: 50px 77px 62px;
   }
 
+  .promo {
+    padding-top: 98px;
+  }
+
+  .promo__content {
+    -ms-grid-columns: 43.07% 56.93%;
+    grid-template-columns: 43.07% 56.93%;
+  }
+
+  .promo__description {
+    min-height: 292px;
+    padding: 45px 15.6% 51px;
+  }
+
   .promo__description h3 {
+    width: 120px;
+    margin-bottom: 4px;
     font-size: 52px;
     line-height: 52px;
   }
 
   .promo__description p {
+    margin-bottom: 31px;
     font-size: 12px;
     line-height: 18px;
+  }
+
+  .promo__description table {
+    top: 47px;
+  }
+
+  .promo__description tr {
+    margin-bottom: -1px;
+  }
+
+  .promo__description td:nth-child(n + 2)::before {
+    top: 2px;
+  }
+
+  .promo__description td span {
+    margin-left: 4px;
   }
 
   .promo__description tr td:first-child {
@@ -2015,12 +2133,7 @@ button,
 
   .promo__description tr td:not(:first-child) span {
     font-size: 10px;
-    line-height: 15px;
-  }
-
-  .promo__photo {
-    width: 386px;
-    height: 292px;
+    line-height: 14px;
   }
 
   .coach__photo img {
@@ -2078,6 +2191,10 @@ button,
 
   .btn--membership {
     min-height: 64px;
+  }
+
+  .btn--promo {
+    min-height: 39px;
   }
 
   .modal__wrapper {
@@ -2265,8 +2382,23 @@ button,
     height: 33px;
   }
 
+  .promo {
+    padding-top: 70px;
+  }
+
+  .promo__content {
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+  }
+
   .promo__photo {
-    width: 290px;
+    height: 292px;
+  }
+
+  .promo__photo img {
+    -webkit-transform: scale(1.15) translate(2px, 19px);
+    -ms-transform: scale(1.15) translate(2px, 19px);
+    transform: scale(1.15) translate(2px, 19px);
   }
 
   .coach__photo img {

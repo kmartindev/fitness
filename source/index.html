@@ -151,7 +151,7 @@
                 <table>
                   <tr>
                     <td>Дата</td>
-                    <td>7 <span>Марта 2019</span></td>
+                    <td>7 <span>Марта<br>2019</span></td>
                   </tr>
                   <tr>
                     <td>Время</td>
@@ -161,7 +161,11 @@
                 <a class="btn  btn--light  btn--promo" href="#">Заполнить заявку</a>
               </div>
               <div class="promo__photo">
-                <img src="https://placehold.jp/660x500.jpg" width="660" height="500" alt="Отжимающийся спортсмен с голым торсом">
+                <!-- 1х: 660x500; 2x: 1320x1000 -->
+                <picture>
+                  <source type="image/webp" srcset="img/promo.webp 1x, img/promo@2x.webp 2x">
+                  <img src="img/promo.jpg" srcset="img/promo@2x.jpg 2x" width="660" height="500" alt="Отжимающийся спортмен с голым торсом">
+                </picture>
               </div>
             </div>
           </div>
