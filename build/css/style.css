@@ -1058,6 +1058,10 @@ button,
   text-align: center;
 }
 
+.section__title--coaches {
+  margin-bottom: 55px;
+}
+
 .section__title--trial {
   line-height: 64px;
   color: #ffffff;
@@ -1518,57 +1522,209 @@ button,
   object-fit: cover;
 }
 
-.coaches__slider ul {
+.coaches {
+  position: relative;
+  padding-top: 55px;
+  padding-bottom: 120px;
+}
+
+.coaches__list {
+  position: relative;
+}
+
+.coaches__slider > ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr);
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+.coach {
+  position: relative;
+  overflow: hidden;
+}
+
+.coach__title {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-height: 49px;
+  width: 100%;
+  margin: 0;
+  padding: 0 30px 22px;
+}
+
 .coach__photo img {
-  width: 260px;
+  width: 100%;
   height: 294px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .coach__title p {
+  margin: 0;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
   color: #ffffff;
+  text-align: center;
+}
+
+.coach:hover .coach__description,
+.coach:focus .coach__description {
+  overflow-y: auto;
+  background-color: rgba(16, 38, 84, 0.89);
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.coach:hover .coach__description p,
+.coach:focus .coach__description p {
+  opacity: 1;
 }
 
 .coach__description {
-  background-color: rgba(16, 38, 84, 0.89);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  max-height: 100%;
+  -webkit-transform: translateY(65%);
+  -ms-transform: translateY(65%);
+  transform: translateY(65%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 52px 20px 35px;
+  background-color: rgba(16, 38, 84, 0);
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  scrollbar-width: none;
+}
+
+.coach__description::-webkit-scrollbar {
+  width: 1px;
 }
 
 .coach__description h3 {
+  margin: 0;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
   color: #ffffff;
+  text-align: center;
 }
 
 .coach__description p {
+  margin: 0;
+  margin-top: -5px;
+  margin-bottom: 34px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #b6bdcc;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .coach__description ul {
   margin: 0;
   padding: 0;
-  list-style: none;
+  padding-left: 23%;
+  list-style-type: disc;
 }
 
 .coach__description li {
+  margin-bottom: 13px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   color: #ffffff;
+}
+
+.coach__description li:last-child {
+  margin-bottom: 0;
+}
+
+.slider {
+  position: relative;
+  z-index: 2;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  min-height: 56px;
+}
+
+.slider-controls__button {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.slider-controls__button--prev {
+  left: -76px;
+}
+
+.slider-controls__button--next {
+  right: -76px;
+}
+
+.slider-controls__button svg {
+  fill: none;
+  stroke: #afafaf;
+}
+
+.slider-controls__button--prev svg {
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .advantages {
@@ -1711,6 +1867,10 @@ button,
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.reviews__list {
+  position: relative;
 }
 
 .review {
@@ -1986,6 +2146,11 @@ button,
     margin-bottom: 20px;
   }
 
+  .section__title--coaches {
+    margin-bottom: 44px;
+    text-align: center;
+  }
+
   .section__title--trial {
     font-size: 42px;
     line-height: 42px;
@@ -2080,6 +2245,7 @@ button,
 
   .promo {
     padding-top: 98px;
+    padding-bottom: 50px;
   }
 
   .promo__content {
@@ -2136,9 +2302,30 @@ button,
     line-height: 14px;
   }
 
-  .coach__photo img {
-    width: 268px;
-    height: 294px;
+  .coaches {
+    padding-top: 45px;
+    padding-bottom: 100px;
+  }
+
+  .coaches__list {
+    width: 566px;
+    margin: 0 auto;
+  }
+
+  .coaches__slider > ul {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+  }
+
+  .coaches__slider > ul > li:nth-child(n + 3) {
+    display: none;
+  }
+
+  .coach__description {
+    padding: 52px 16px 35px;
   }
 
   .advantage__header b {
@@ -2273,6 +2460,10 @@ button,
     margin-bottom: 12px;
   }
 
+  .section__title--coaches {
+    margin-bottom: 47px;
+  }
+
   .section__title--trial {
     font-size: 32px;
     line-height: 32px;
@@ -2384,6 +2575,7 @@ button,
 
   .promo {
     padding-top: 70px;
+    padding-bottom: 35px;
   }
 
   .promo__content {
@@ -2401,9 +2593,52 @@ button,
     transform: scale(1.15) translate(2px, 19px);
   }
 
-  .coach__photo img {
+  .coaches {
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+
+  .coaches__list {
     width: 226px;
+  }
+
+  .coaches__slider > ul {
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+  }
+
+  .coaches__slider > ul > li:nth-child(n + 2) {
+    display: none;
+  }
+
+  .coach__photo img {
     height: 274px;
+  }
+
+  .coach__description {
+    padding: 42px 15px 35px;
+  }
+
+  .coach__description ul {
+    padding-left: 35px;
+  }
+
+  .slider-controls__button {
+    width: 47px;
+    height: 47px;
+  }
+
+  .slider-controls__button--prev {
+    left: -47px;
+  }
+
+  .slider-controls__button--next {
+    right: -47px;
+  }
+
+  .slider-controls__button svg {
+    width: 11px;
+    height: 20px;
   }
 
   .review__photo {
