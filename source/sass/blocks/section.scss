@@ -80,6 +80,20 @@
   }
 }
 
+.section__title--reviews {
+  margin-bottom: 55px;
+
+  text-align: center;
+
+  @include vp-1199 {
+    margin-bottom: 44px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 47px;
+  }
+}
+
 .section__title--trial {
   line-height: 64px;
   color: $color-default-white;
