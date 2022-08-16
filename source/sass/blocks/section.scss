@@ -95,6 +95,8 @@
 }
 
 .section__title--trial {
+  margin-bottom: 35px;
+
   line-height: 64px;
   color: $color-default-white;
 
@@ -106,5 +108,17 @@
   @include vp-767 {
     font-size: 32px;
     line-height: 32px;
+  }
+}
+
+.section__title--contacts {
+  margin-bottom: 44px;
+
+  @include vp-1199 {
+    margin-bottom: 35px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 37px;
   }
 }

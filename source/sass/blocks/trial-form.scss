@@ -1,8 +1,35 @@
+.trial-form__group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  margin-bottom: 28px;
+
+  @include vp-1199 {
+    column-gap: 60px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: auto;
+    margin-bottom: 37px;
+  }
+}
+
+.trial-form__field {
+  @include vp-767 {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .trial-form__field input {
   display: flex;
   align-items: center;
-  min-height: 24px;
-  padding: 8px 0;
+  width: 100%;
+  min-height: 23px;
+  padding: 7px 0;
 
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
@@ -13,4 +40,8 @@
   background: none;
   border: none;
   border-bottom: 1px solid $color-light-slate-grey;
+
+  &::placeholder {
+    color: inherit;
+  }
 }
