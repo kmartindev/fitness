@@ -1,1 +1,30 @@
-//
+.stock {
+  padding-top: 115px;
+  padding-bottom: 60px;
+
+  @include vp-1199 {
+    padding-top: 96px;
+  }
+
+  @include vp-767 {
+    padding-top: 67px;
+  }
+}
+
+.stock__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(211px, max-content);
+  column-gap: 40px;
+  row-gap: 40px;
+
+  @include vp-1199 {
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+  }
+}
