@@ -1372,6 +1372,9 @@ button,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .membership-tabs__item:hover,
@@ -1391,6 +1394,44 @@ button,
 
 .membership-tabscontent {
   width: 100%;
+}
+
+.membership-tabscontent__item {
+  display: none;
+}
+
+.membership-tabscontent__item.is-active {
+  display: block;
+  -webkit-animation: fadeEffect 0.6s ease;
+  animation: fadeEffect 0.6s ease;
+}
+
+@-webkit-keyframes fadeEffect {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
 }
 
 .membership-tabscontent__item ul {

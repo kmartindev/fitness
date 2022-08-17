@@ -51,6 +51,8 @@
   cursor: pointer;
   user-select: none;
 
+  transition: $trans-default;
+
   @include vp-1199 {
     margin: 0 27px;
 
