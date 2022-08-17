@@ -42,6 +42,40 @@
   width: 364px;
   height: 228px;
 
+  background-color: $color-santas-grey;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-dark-cerulean-50;
+  }
+
+  @include vp-1200 {
+    background-image: url("../img/video-preview.jpg");
+
+    @supports (background-image: image-set(url("../img/video-preview.webp") 1x)) {
+      background-image: image-set(url("../img/video-preview.webp") 1x);
+    }
+
+    @include retina {
+      background-image: url("../img/video-preview@2x.jpg");
+
+      @supports (background-image: image-set(url("../img/video-preview@2x.webp") 2x)) {
+        background-image: image-set(url("../img/video-preview@2x.webp") 2x);
+      }
+    }
+  }
+
   @include vp-1199 {
     top: 261px;
     left: 50%;
@@ -49,15 +83,58 @@
 
     width: 266px;
     height: 167px;
+
+    background-image: url("../img/video-preview.jpg");
+
+    @supports (background-image: image-set(url("../img/video-preview.webp") 1x)) {
+      background-image: image-set(url("../img/video-preview.webp") 1x);
+    }
+
+    @include retina {
+      background-image: url("../img/video-preview@2x.jpg");
+
+      @supports (background-image: image-set(url("../img/video-preview@2x.webp") 2x)) {
+        background-image: image-set(url("../img/video-preview@2x.webp") 2x);
+      }
+    }
   }
 
   @include vp-767 {
-    position: static;
+    position: relative;
+    top: 0;
+    left: 0;
     transform: none;
 
     width: 320px;
     margin: 0 auto;
+
+    background-image: url("../img/video-preview-mobile.jpg");
+
+    @supports (background-image: image-set(url("../img/video-preview-mobile.webp") 1x)) {
+      background-image: image-set(url("../img/video-preview-mobile.webp") 1x);
+    }
+
+    @include retina {
+      background-image: url("../img/video-preview-mobile@2x.jpg");
+
+      @supports (background-image: image-set(url("../img/video-preview-mobile@2x.webp") 2x)) {
+        background-image: image-set(url("../img/video-preview-mobile@2x.webp") 2x);
+      }
+    }
   }
+}
+
+.about-view__video.is-active {
+  background-color: $color-default-black;
+  background-image: none;
+
+  &::before {
+    display: none;
+  }
+}
+
+.about-view__video.is-active button {
+  display: none;
 }
 
 .about-view__video iframe {
@@ -66,4 +143,115 @@
   height: 100%;
 
   border: none;
+}
+
+.about-view__video button {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0;
+  padding: 0;
+
+  background: none;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  @include vp-1199 {
+    width: 52px;
+    height: 52px;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(44.89deg, $color-dark-cerulean 25.38%, $color-venetian-red 74.89%);
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: $color-cobalt;
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transition: $trans-default;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  svg {
+    position: relative;
+    z-index: 2;
+
+    transform: translateX(2px);
+
+    transition: $trans-default;
+
+    @include vp-1199 {
+      width: 10px;
+      height: 12px;
+
+      transform: translateX(1px);
+    }
+  }
+
+  &:active {
+    svg {
+      opacity: 0.3;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+
+    width: 100px;
+    height: 100px;
+
+    background: linear-gradient(90deg, $color-torch-red-20 0%, $color-cobalt-20 100%) border-box;
+    mask: linear-gradient($color-default-white 0 0) padding-box, linear-gradient($color-default-white 0 0);
+    mask-composite: exclude;
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+    @include vp-1199 {
+      width: 73px;
+      height: 73px;
+    }
+  }
 }
