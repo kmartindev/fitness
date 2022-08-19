@@ -1,8 +1,8 @@
-.trial-form__group {
+.trial-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 30px;
-  margin-bottom: 28px;
+  row-gap: 28px;
 
   @include vp-1199 {
     column-gap: 60px;
@@ -10,7 +10,7 @@
 
   @include vp-767 {
     grid-template-columns: auto;
-    margin-bottom: 37px;
+    row-gap: 0;
   }
 }
 
@@ -43,5 +43,13 @@
 
   &::placeholder {
     color: inherit;
+  }
+}
+
+.trial-form button {
+  grid-column: 1 / -1;
+
+  @include vp-767 {
+    margin-top: 7px;
   }
 }
