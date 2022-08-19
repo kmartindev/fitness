@@ -1,5 +1,6 @@
 .coach {
   position: relative;
+  width: 22.41%;
 
   overflow: hidden;
 }
@@ -38,18 +39,36 @@
   text-align: center;
 }
 
-.coach:hover .coach__description,
-.coach:focus .coach__description {
-  overflow-y: auto;
+.coach:hover .coach__description {
+  @include vp-1200 {
+    overflow-y: auto;
 
-  background-color: $color-sapphire-89;
+    background-color: $color-sapphire-89;
 
-  transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 
-.coach:hover .coach__description p,
-.coach:focus .coach__description p {
-  opacity: 1;
+.coach.is-open .coach__description {
+  @include vp-1199 {
+    overflow-y: auto;
+
+    background-color: $color-sapphire-89;
+
+    transform: translateY(0);
+  }
+}
+
+.coach:hover .coach__description p {
+  @include vp-1200 {
+    opacity: 1;
+  }
+}
+
+.coach.is-open .coach__description p {
+  @include vp-1199 {
+    opacity: 1;
+  }
 }
 
 .coach__description {

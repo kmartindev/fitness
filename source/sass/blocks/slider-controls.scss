@@ -32,6 +32,12 @@
   }
 }
 
+.slider-controls__button.swiper-button-disabled {
+  opacity: 0.3;
+
+  cursor: auto;
+}
+
 .slider-controls__button--prev {
   left: -76px;
 
