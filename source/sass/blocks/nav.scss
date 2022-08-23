@@ -55,6 +55,17 @@
   line-height: 16px;
   color: $color-default-white;
 
+  transition: $trans-default;
+
+  &:hover,
+  &:focus {
+    color: $color-torch-red;
+  }
+
+  &:active {
+    color: $color-torch-red-70;
+  }
+
   @include vp-1199 {
     margin: 0 15px;
   }

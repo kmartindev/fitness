@@ -30,3 +30,16 @@
     line-height: 27px;
   }
 }
+
+.contact a {
+  transition: $trans-default;
+
+  &:hover,
+  &:focus {
+    color: $color-sapphire-70;
+  }
+
+  &:active {
+    color: $color-sapphire-30;
+  }
+}

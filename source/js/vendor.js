@@ -17,6 +17,8 @@ const swiperCoaches = new Swiper('.coaches__slider', {
     },
   },
 
+  loop: true,
+
   navigation: {
     prevEl: '.coaches-controls__button--prev',
     nextEl: '.coaches-controls__button--next',
@@ -26,6 +28,8 @@ const swiperCoaches = new Swiper('.coaches__slider', {
 const swiperReviews = new Swiper('.reviews__slider', {
   slidesPerView: 1,
   spaceBetween: 40,
+
+  loop: true,
 
   navigation: {
     prevEl: '.reviews-controls__button--prev',

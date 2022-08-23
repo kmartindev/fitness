@@ -35,8 +35,15 @@
   }
 }
 
+.event--primary .event__description {
+  @include vp-767 {
+    aspect-ratio: 290 / 299;
+  }
+}
+
 .event--primary h3 {
   margin: 0;
+  margin-bottom: 25px;
 
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
@@ -106,8 +113,12 @@
   height: 100%;
   width: 100%;
 
+  @include vp-1199 {
+    aspect-ratio: 19 / 22;
+  }
+
   @include vp-767 {
-    height: 299px;
+    aspect-ratio: 290 / 299;
   }
 }
 
@@ -166,6 +177,7 @@
 
 .event--secondary p {
   margin: 0;
+  margin-bottom: 20px;
 
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;

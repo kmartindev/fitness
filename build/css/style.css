@@ -1070,10 +1070,10 @@ button,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 26px;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  min-height: 52px;
 }
 
 .page-bar a {
@@ -1097,7 +1097,7 @@ button,
   color: rgba(16, 38, 84, 0.3);
 }
 
-.logo {
+.logo--page-footer {
   margin: 0;
   font-family: "Bebas Neue", "Trebuchet MS", sans-serif;
   font-weight: 700;
@@ -2352,6 +2352,7 @@ button,
 
 .event--primary h3 {
   margin: 0;
+  margin-bottom: 25px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -2448,6 +2449,7 @@ button,
 
 .event--secondary p {
   margin: 0;
+  margin-bottom: 20px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -2483,10 +2485,13 @@ button,
   margin: 0 auto;
 }
 
-.coaches__list {
+.reviews__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .review {
@@ -2659,6 +2664,21 @@ button,
   color: #102654;
 }
 
+.contact a {
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.contact a:hover,
+.contact a:focus {
+  color: rgba(16, 38, 84, 0.7);
+}
+
+.contact a:active {
+  color: rgba(16, 38, 84, 0.3);
+}
+
 .page-footer {
   padding-top: 42px;
   padding-bottom: 42px;
@@ -2693,6 +2713,18 @@ button,
   font-size: 14px;
   line-height: 16px;
   color: #ffffff;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.nav a:hover,
+.nav a:focus {
+  color: #ed0233;
+}
+
+.nav a:active {
+  color: rgba(237, 2, 51, 0.7);
 }
 
 .footer-socials {
@@ -2712,6 +2744,18 @@ button,
 .footer-socials a {
   margin-left: 11px;
   color: #ffffff;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover,
+.footer-socials a:focus {
+  color: #ed0233;
+}
+
+.footer-socials a:active {
+  color: rgba(237, 2, 51, 0.7);
 }
 
 [data-el="tel-field"] {
@@ -2856,7 +2900,7 @@ button,
   }
 
   .page-bar {
-    padding-top: 37px;
+    min-height: 60px;
   }
 
   .page-bar a {
@@ -2865,9 +2909,15 @@ button,
     letter-spacing: 0.02em;
   }
 
-  .logo {
+  .logo--page-footer {
     font-size: 24px;
     line-height: 24px;
+  }
+
+  .logo--page-header {
+    width: 85px;
+    height: 18px;
+    margin-bottom: 1px;
   }
 
   .main-screen__content {
@@ -3279,6 +3329,10 @@ button,
     min-height: 462px;
   }
 
+  .event__photo {
+    aspect-ratio: 19 / 22;
+  }
+
   .event__photo img {
     -o-object-position: center -5px;
     object-position: center -5px;
@@ -3431,7 +3485,7 @@ button,
   }
 
   .page-bar {
-    padding-top: 18px;
+    min-height: 39px;
   }
 
   .page-bar a {
@@ -3439,9 +3493,15 @@ button,
     line-height: 20px;
   }
 
-  .logo {
+  .logo--page-footer {
     font-size: 20px;
     line-height: 20px;
+  }
+
+  .logo--page-header {
+    width: 82px;
+    height: 15px;
+    margin-bottom: 3px;
   }
 
   .main-screen__content {
@@ -3756,6 +3816,10 @@ button,
     padding: 35px 45px 45px;
   }
 
+  .event--primary .event__description {
+    aspect-ratio: 290 / 299;
+  }
+
   .event--primary h3 {
     margin-bottom: 31px;
   }
@@ -3772,7 +3836,7 @@ button,
   }
 
   .event__photo {
-    height: 299px;
+    aspect-ratio: 290 / 299;
   }
 
   .event__photo img {
